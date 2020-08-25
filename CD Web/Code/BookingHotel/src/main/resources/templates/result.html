@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>FormWizard_v2</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="colorlib.com">
+		<!-- LINEARICONS -->
+		<link rel="stylesheet" href="fonts/linearicons/style.css">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+
+		<!-- DATE-PICKER -->
+		<link rel="stylesheet" href="vendor/date-picker/css/datepicker.min.css">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="vendor/style.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="inner">
+				
+            	<div id="wizard">
+            		
+
+			
+
+	                <!-- SECTION 4 -->
+	                 <h4>Make a Reservation</h4>
+	                 <section>
+	                  <form th:action="@{/customerinfo}" method="POST" th:object="${booking}">
+                    	<div class="form-row">
+							<div class="form-holder">
+								<input type="text" class="form-control"  th:field="*{customerName}"placeholder="First Name :">
+							</div>
+							<div class="form-holder">
+								<input type="text" class="form-control"  placeholder="Last Name :">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-holder">
+								<input type="text" class="form-control" th:field="*{customerPhone}"placeholder="Phone :">
+							</div>
+							<div class="form-holder">
+								<input type="text" class="form-control" th:field="*{customerEmail}" placeholder="Mail :">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-holder w-100">
+								<input type="text" class="form-control"  th:field="*{cusomerAddress}" placeholder="Address :">
+							</div>
+						</div>
+						<div class="form-row mb-21">
+							<div class="form-holder w-100">
+								<textarea name="" id="" class="form-control" style="height: 79px;"  th:field="*{requirement}"placeholder="Special Requirements :"></textarea>
+							</div>
+						</div>
+	                    <div class="checkbox">
+							<label>
+								<input type="checkbox"> I have read and accept the <a href="#">terms and conditions.</a>
+								<span class="checkmark"></span>
+							</label>
+						</div>
+	                    <a ><button type="submit" class="forward" style="width: 195px; margin-top: 44px;">Confirmation
+							<i class="zmdi zmdi-long-arrow-right" ></i>
+						</button></a>
+	                </form>
+	                 
+	                 </section>
+	                 
+	                 	</div>
+	                </div>
+	</div>
+
+		<script src="js/jquery-3.3.1.min.js"></script>
+
+		<!-- JQUERY STEP -->
+		<script src="js/jquery.steps.js"></script>
+
+		<!-- DATE-PICKER -->
+		<script src="vendor/date-picker/js/datepicker.js"></script>
+		<script src="vendor/date-picker/js/datepicker.en.js"></script>
+
+		<script src="js/main.js"></script>
+<!-- Template created and distributed by Colorlib -->
+</body>
+</html>

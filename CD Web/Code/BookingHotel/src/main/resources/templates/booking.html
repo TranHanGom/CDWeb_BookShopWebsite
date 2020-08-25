@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>FormWizard_v2</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="colorlib.com">
+		<!-- LINEARICONS -->
+		<link rel="stylesheet" href="fonts/linearicons/style.css">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+
+		<!-- DATE-PICKER -->
+		<link rel="stylesheet" href="vendor/date-picker/css/datepicker.min.css">
+<!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+	<div th:replace="layout/header :: header-css"/>
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="vendor/style.css">
+	</head>
+	<body>
+	 <!-- Header Area Start -->
+    <div th:replace="layout/header :: header"/>
+        <!-- Header Area End -->
+	
+		<div class="wrapper">
+			<div class="inner">
+				
+            	<div id="wizard">
+            		
+
+			
+					<!-- SECTION 2 -->
+	               
+	                <h4>Room Information</h4> 
+	                <section class="section-style">
+	                
+                		
+                		<div class="form-wrapper">
+                		<div class="form-row">
+								<div class="form-holder">
+									<input type="text" style="color: aliceblue;" class="form-control datepicker-here pl-85" data-language="en" data-date-format="dd - m - yyyy" id="dp1">
+									<span class="lnr lnr-chevron-down"></span>
+									<span class="placeholder">Check in :</span>
+								</div>
+								<div class="form-holder">
+									<input style="color: aliceblue;" type="text" class="form-control datepicker-here pl-96" data-language="en" data-date-format="dd - m - yyyy" id="dp2">
+									<span class="lnr lnr-chevron-down"></span>
+									<span class="placeholder">Check out :</span>
+								</div>
+							</div>
+							<h5 style="color: #edc948;">Your Stay : <a th:text="${session.stay.size()}"></a> room</h5>
+                			<div class="form-row">
+                				<div class="form-holder w-100 room-detail">
+									
+									<div class="bill">
+										<div class="bill-cell" th:each="item,i : ${session.stay}" >
+											<div class="bill-item">
+											  
+												<div class="bill-unit">
+													  <span th:text="${item.room.roomName}"></span>
+												</div>
+												<a><span class="price" th:text="${item.room.roomPrice}"></span> $/Day</a>
+											</div>
+											<div class="bill-item people" >
+												
+												<a th:href="@{'/booking/remove/'+ ${i.index}}" style="color: aliceblue;"><small>Remove</small></a>
+											
+											</div>
+										</div>
+										
+										<div class="bill-cell">
+											
+											<div class="bill-item total-price">
+												<div class="bill-unit">
+													Total Price :
+												</div>
+												<a style="margin-left: 220px; "><span class="price" th:text="${total}"></span>$</a>
+											</div>
+											<a href="/room" style="margin-left: 420px;color: aliceblue; text-decoration: underline;"><small>Add Room</small></a>
+											
+										</div>
+									</div>	
+								</div>
+                			</div>				
+							
+							<a href="/customerinfo"><button class="forward">Book now
+								<i  class="zmdi zmdi-long-arrow-right"></i>
+							</button></a>
+                		</div>
+	                </section>
+
+
+	               
+	              </div>
+
+	                </div>
+	</div>
+<!-- Footer Area Start -->
+   <div th:replace="layout/footer :: footer"/>
+    <!-- Footer Area End -->
+
+
+    <!-- **** All JS Files ***** -->
+    <!-- jQuery 2.2.4 -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Popper -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- All Plugins -->
+    <script src="js/roberto.bundle.js"></script>
+    <!-- Active -->
+    <script src="js/default-assets/active.js"></script>
+
+		<script src="js/jquery-3.3.1.min.js"></script>
+
+		<!-- JQUERY STEP -->
+		<script src="js/jquery.steps.js"></script>
+
+		<!-- DATE-PICKER -->
+		<script src="vendor/date-picker/js/datepicker.js"></script>
+		<script src="vendor/date-picker/js/datepicker.en.js"></script>
+
+		<script src="js/main.js"></script>
+<!-- Template created and distributed by Colorlib -->
+</body>
+</html>

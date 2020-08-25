@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>FormWizard_v2</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="colorlib.com">
+		<!-- LINEARICONS -->
+		<link rel="stylesheet" href="fonts/linearicons/style.css">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+
+		<!-- DATE-PICKER -->
+		<link rel="stylesheet" href="vendor/date-picker/css/datepicker.min.css">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="vendor/style.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="inner">
+				<div class="image-holder">
+					<img src="images/form-wizard.jpg" alt="">
+					<h3>Your Booking</h3>
+				</div>
+            	<div id="wizard">
+            		
+
+					<!-- SECTION 2 -->
+	                <h4>Room Information</h4> 
+	               
+	                <section class="section-style">
+                		
+                		<div class="form-wrapper">
+                		<div class="form-row">
+								<div class="form-holder">
+									<input type="text" class="form-control datepicker-here pl-85" data-language="en" data-date-format="dd - m - yyyy" id="dp1">
+									<span class="lnr lnr-chevron-down"></span>
+									<span class="placeholder">Check in :</span>
+								</div>
+								<div class="form-holder">
+									<input type="text" class="form-control datepicker-here pl-96" data-language="en" data-date-format="dd - m - yyyy" id="dp2">
+									<span class="lnr lnr-chevron-down"></span>
+									<span class="placeholder">Check out :</span>
+								</div>
+							</div>
+							<h5>Your Stay : <a th:text="${session.stay.size()}"></a> room</h5>
+                			<div class="form-row">
+                				<div class="form-holder w-100 room-detail">
+									
+									<div class="bill">
+										<div class="bill-cell" th:each="item,i : ${session.stay}" >
+											<div class="bill-item">
+											  
+												<div class="bill-unit">
+													  <span th:text="${item.room.roomName}"></span>
+												</div>
+												<a><span class="price" th:text="${item.room.roomPrice}"></span> $/Day</a>
+											</div>
+											<div class="bill-item people" >
+												
+												<a th:href="@{'/booking/remove/'+ ${i.index}}" style="color: aliceblue;"><small>Remove</small></a>
+											
+											</div>
+										</div>
+										
+										<div class="bill-cell">
+											
+											<div class="bill-item total-price">
+												<div class="bill-unit">
+													Total Price :
+												</div>
+												<span class="price" th:text="${total}"></span>
+											</div>
+											<a href="/room" style="margin-left: 420px;color: aliceblue; text-decoration: underline;"><small>Add Room</small></a>
+											 <a ><button class="forward" style="width: 195px; margin-top: 44px;">Confirmation
+							<i class="zmdi zmdi-long-arrow-right" ></i>
+						</button></a>
+										</div>
+									</div>	
+								</div>
+                			</div>
+                			
+                			
+                			
+	                		<button class="forward">Book now
+								<i  class="zmdi zmdi-long-arrow-right"></i>
+							</button>
+                		</div>
+	                </section>
+
+
+	                <!-- SECTION 3 -->
+	                <h4>Make a Reservation</h4>
+	                <section>
+                    	<div class="form-row">
+							<div class="form-holder">
+								<input type="text" class="form-control" placeholder="First Name :">
+							</div>
+							<div class="form-holder">
+								<input type="text" class="form-control" placeholder="Last Name :">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-holder">
+								<input type="text" class="form-control" placeholder="Phone :">
+							</div>
+							<div class="form-holder">
+								<input type="text" class="form-control" placeholder="Mail :">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-holder w-100">
+								<input type="text" class="form-control" placeholder="Address :">
+							</div>
+						</div>
+						<div class="form-row mb-21">
+							<div class="form-holder w-100">
+								<textarea name="" id="" class="form-control" style="height: 79px;" placeholder="Special Requirements :"></textarea>
+							</div>
+						</div>
+	                    <div class="checkbox">
+							<label>
+								<input type="checkbox"> I have read and accept the <a href="#">terms and conditions.</a>
+								<span class="checkmark"></span>
+							</label>
+						</div>
+	                    <a ><button class="forward" style="width: 195px; margin-top: 44px;">Confirmation
+							<i class="zmdi zmdi-long-arrow-right" ></i>
+						</button></a>
+	                </section>
+
+	                </div>
+			</div>
+		</div>
+
+		<script src="js/jquery-3.3.1.min.js"></script>
+
+		<!-- JQUERY STEP -->
+		<script src="js/jquery.steps.js"></script>
+
+		<!-- DATE-PICKER -->
+		<script src="vendor/date-picker/js/datepicker.js"></script>
+		<script src="vendor/date-picker/js/datepicker.en.js"></script>
+
+		<script src="js/main.js"></script>
+<!-- Template created and distributed by Colorlib -->
+</body>
+</html>

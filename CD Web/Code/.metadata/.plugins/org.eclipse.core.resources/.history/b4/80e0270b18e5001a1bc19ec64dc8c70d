@@ -1,0 +1,43 @@
+package com.cdweb.service;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import com.cdweb.entity.Product;
+import com.cdweb.repository.ProductRepository;
+
+@Service
+public class ProductServiceImpl implements ProductService{
+	private Map<Product, Integer> products = new HashMap<>();
+
+	@Autowired
+	private ProductRepository productRepository;
+	@Override
+	public Iterable<Product> findAll() {
+		// TODO Auto-generated method stub
+		return productRepository.findAll();
+	}
+	@Override
+	public Product findById(Integer id) {
+		// TODO Auto-generated method stub
+		return productRepository.findById(id).get();
+	}
+	@Override
+	public Page<Product> findAllProductsPageable(Pageable pageable) {
+		// TODO Auto-generated method stub
+		 return productRepository.findAll(pageable);
+    }
+	@Override
+	public Map<Product, Integer> getProductsInCart() {
+		// TODO Auto-generated method stub
+		  return Collections.unmodifiableMap(products);
+	}
+	
+
+}

@@ -1,0 +1,28 @@
+package com.cnpm.controller;
+
+import java.util.HashMap;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import com.cnpm.utils.*;
+import com.cnpm.service.RoomService;
+
+@Controller
+public class StayController {
+	@Autowired
+	private RoomService roomService;
+	@GetMapping
+    public String addItem(Model model , HttpSession session, @PathVariable("roomId") int productId) {
+		 HashMap<Integer, Stay> stayItems = (HashMap<Integer, Stay>) session.getAttribute("myStayItems");
+	        if (stayItems == null) {
+	        	stayItems = new HashMap<>();
+	        }
+	       
+        return "stay";
+    }
+}

@@ -1,0 +1,14 @@
+package com.cnpm.service;
+
+import org.springframework.security.core.userdetails.UserDetailsService;
+
+import com.cnpm.model.User;
+import com.cnpm.web.dto.UserRegistrationDto;
+
+
+public interface UserService extends UserDetailsService {
+
+    User findByEmail(String email);
+
+    User save(UserRegistrationDto registration);
+}

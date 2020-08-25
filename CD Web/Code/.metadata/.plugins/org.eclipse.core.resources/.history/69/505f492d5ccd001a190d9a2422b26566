@@ -1,0 +1,5 @@
+package com.cnpm.repository;
+
+public interface ProductRepository {
+
+}

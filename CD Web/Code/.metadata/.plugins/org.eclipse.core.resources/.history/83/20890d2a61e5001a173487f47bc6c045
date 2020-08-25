@@ -1,0 +1,13 @@
+package demo;
+
+	public class MyObj {
+	       public MyObj go(MyObj cb) {
+	               cb = null;
+	       return cb;
+	       }
+	public static void main(String[] args) {
+	      MyObj c1 = new MyObj();
+	      MyObj c2 = new MyObj();
+	      MyObj c3 = c1.go(c2);
+	   }
+	}

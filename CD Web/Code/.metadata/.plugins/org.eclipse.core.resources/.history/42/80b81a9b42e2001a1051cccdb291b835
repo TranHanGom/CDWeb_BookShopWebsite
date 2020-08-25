@@ -1,0 +1,9 @@
+package com.cnpm.service;
+
+import org.springframework.security.core.userdetails.UserDetails;
+
+import com.cnpm.model.User;
+
+public interface UserService extends UserDetails {
+   User findByName(String username);
+}

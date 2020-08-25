@@ -1,0 +1,14 @@
+package demo;
+
+public class Q1 extends Uber {
+	   Q1() {
+		      super(y);
+		      y = y + 3;
+		   }
+		   public static void main(String[] args) {
+		      new Minor();
+		      System.out.println(y);
+		   }
+		}
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Booking Form</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="rcss/style.css">
+	</head>
+
+	<body>
+
+		<div class="wrapper" style="background-image: url('images/bg-01.jpg');">
+			<div class="inner">
+				
+				<form action="/login.html">
+					<h3>Booking</h3>
+					<div class="form-group">
+						<input type="text" placeholder="First Name" class="form-control">
+						<input type="text" placeholder="Last Name" class="form-control">
+					</div>
+					<div class="form-group">
+						<input type="text" placeholder="Email" class="form-control">
+						<input type="text" placeholder="Confirmation Email" class="form-control">
+					</div>
+					<div class="form-group">
+						<input type="text" placeholder="Phone" class="form-control">
+						<input type="text" placeholder="Addresss" class="form-control">
+					</div>
+					<div class="col-6 col-md-2 col-lg-3">
+                        <label for="checkIn">Check In</label>
+                        <input type="date" class="form-control" id="checkIn" name="checkin-date">
+                    </div>
+                    <div class="col-6 col-md-2 col-lg-3">
+                        <label for="checkOut">Check Out</label>
+                        <input type="date" class="form-control" id="checkOut" name="checkout-date">
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <label for="room">Room</label>
+                        <select name="room" id="room" class="form-control">
+                            <option value="01">Single Room</option>
+                            <option value="02">Double Room</option>
+                            <option value="03">Twin Room</option>
+                            <option value="04">Family Room</option>
+                           
+                        </select>
+                    </div>
+                   
+					<button>Booking
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+				</form>
+			</div>
+		</div>
+		
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+</body>
+</html>

@@ -1,0 +1,14 @@
+package demo;
+
+public class Q1 {
+	
+		   private static int a;
+		   public static void main(String[] args) {
+		      modify(a);
+		      System.out.println(a); // a nay là a biến static
+		   }
+		   public static void modify(int a) {
+		      a++;
+		   }
+
+}

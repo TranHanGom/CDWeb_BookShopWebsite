@@ -1,0 +1,16 @@
+package com.cdweb.service;
+
+import java.util.Map;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
+import com.cdweb.entity.Product;
+
+public interface ProductService {
+	public Iterable<Product> findAll();
+	Product findById(Integer id);
+	 Page<Product> findAllProductsPageable(Pageable pageable);
+	 Map<Product, Integer> getProductsInCart();
+
+}

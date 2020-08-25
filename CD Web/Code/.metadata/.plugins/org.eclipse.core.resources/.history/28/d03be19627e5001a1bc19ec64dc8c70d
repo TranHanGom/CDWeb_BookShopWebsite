@@ -1,0 +1,21 @@
+package com.cdweb.service;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.cdweb.entity.OrderDetail;
+
+
+
+@Service
+@Transactional
+public class OrderDetailServiceImpl implements OrderDetailService {
+
+}

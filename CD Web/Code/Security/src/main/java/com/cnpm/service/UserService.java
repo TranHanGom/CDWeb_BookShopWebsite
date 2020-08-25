@@ -1,0 +1,13 @@
+package com.cnpm.service;
+
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+
+import com.cnpm.model.User;
+
+
+
+
+public interface UserService extends UserDetailsService {
+	
+}

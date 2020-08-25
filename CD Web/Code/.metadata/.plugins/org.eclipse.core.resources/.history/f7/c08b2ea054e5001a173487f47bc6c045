@@ -1,0 +1,13 @@
+package demo;
+
+public class Q1  {
+	interface Base {
+		   boolean m1();
+
+		   byte m2(short s);
+		}
+		
+	
+	
+
+}

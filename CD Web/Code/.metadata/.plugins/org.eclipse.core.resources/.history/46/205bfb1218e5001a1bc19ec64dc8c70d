@@ -1,0 +1,56 @@
+package com.cdweb.service;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import com.cdweb.entity.Product;
+import com.cdweb.repository.ProductRepository;
+
+@Service
+public class ProductServiceImpl implements ProductService{
+	private Map<Product, Integer> products = new HashMap<>();
+
+	@Autowired
+	private ProductRepository productRepository;
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	@Override
+	public Iterable<Product> findAll() {
+		// TODO Auto-generated method stub
+		return productRepository.findAll();
+	}
+	@Override
+	public Product findById(Integer id) {
+		// TODO Auto-generated method stub
+		return productRepository.findById(id).get();
+	}
+	@Override
+	public Page<Product> findAllProductsPageable(Pageable pageable) {
+		// TODO Auto-generated method stub
+		 return productRepository.findAll(pageable);
+    }
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<Product> searchByCateID(int id) {
+		// TODO Auto-generated method stub
+		String query = "from Product where category.id = " + id;
+		return sessionFactory.getCurrentSession().createQuery(query).list();
+	}
+
+	@Override
+	public List<Product> searchByCateID(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+}

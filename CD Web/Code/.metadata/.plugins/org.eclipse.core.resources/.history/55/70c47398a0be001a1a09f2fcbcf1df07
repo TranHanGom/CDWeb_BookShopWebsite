@@ -1,0 +1,5 @@
+package com.cdweb.demo.loginregister.config;
+
+public class SecurityConfiguration {
+
+}

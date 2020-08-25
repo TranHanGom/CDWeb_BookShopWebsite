@@ -1,0 +1,7 @@
+package com.cdweb.service;
+
+import com.cdweb.entity.Category;
+
+public interface OrderService {
+	public Iterable<Category> findAll();
+}

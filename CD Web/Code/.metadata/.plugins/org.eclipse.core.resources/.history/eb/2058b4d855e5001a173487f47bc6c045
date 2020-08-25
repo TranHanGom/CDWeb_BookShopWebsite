@@ -1,0 +1,8 @@
+package demo;
+
+public class Q1  {
+	  public long sum(long a, long b) {
+		      return a + b;
+		   };
+
+}

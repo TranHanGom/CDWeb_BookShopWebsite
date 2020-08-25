@@ -1,0 +1,5 @@
+package com.cnpm.config;
+
+public class AdminSecurity {
+
+}
