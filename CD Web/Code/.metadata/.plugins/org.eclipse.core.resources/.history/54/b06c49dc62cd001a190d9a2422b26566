@@ -1,5 +1,0 @@
-package com.cnpm.repository;
-import org.springframework.data.jpa.repository.JpaRepository;
-public class RoomReposity extends JpaRepository<Room, Long>{
-
-}

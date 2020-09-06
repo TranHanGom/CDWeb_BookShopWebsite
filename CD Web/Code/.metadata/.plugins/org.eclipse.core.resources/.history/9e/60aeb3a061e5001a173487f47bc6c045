@@ -1,8 +1,0 @@
-package demo;
-
-public class A {
-	   public byte getNumber() {
-		      return 5;
-		   }
-
-}

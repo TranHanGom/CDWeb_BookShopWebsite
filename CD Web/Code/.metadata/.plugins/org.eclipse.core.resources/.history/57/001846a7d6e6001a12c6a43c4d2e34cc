@@ -1,8 +1,0 @@
-package com.cdweb.model;
-
-public class Snippet {
-	public static void main(String[] args) {
-		Passgenerator.java
-	}
-}
-

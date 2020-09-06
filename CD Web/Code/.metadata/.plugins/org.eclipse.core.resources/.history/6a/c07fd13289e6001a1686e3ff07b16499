@@ -1,9 +1,0 @@
-package com.cdweb.configuration;
-
-public class Snippet {
-	@Bean  
-	public SessionFactory sessionFactory(HibernateEntityManagerFactory entityManagerFactory){  
-	    return entityManagerFactory.getSessionFactory();  
-	} 
-}
-

@@ -1,5 +1,0 @@
-package com.cdweb.service;
-
-public interface AccountService {
-
-}
